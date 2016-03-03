@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<installer-script authoringTool="Packages" authoringToolVersion="1.1.2" authoringToolBuild="2B104" minSpecVersion="1.0">
+    <options rootVolumeOnly="true" customize="always" allow-external-scripts="false"/>
+    <installation-check script="installation_check()"/>
+    <!--+==========================+
+        |       Presentation       |
+        +==========================+-->
+    <title>DISTRIBUTION_TITLE</title>
+    <!--+==========================+
+        |         Installer        |
+        +==========================+-->
+    <choices-outline>
+        <line choice="installer_choice_1"/>
+        <line choice="installer_choice_2"/>
+        <line choice="installer_choice_3"/>
+        <line choice="installer_choice_4"/>
+    </choices-outline>
+    <choice id="installer_choice_1" start_selected="installer_choice_1_selected(true)" selected="installer_choice_1_selected(false)" title="INSTALLER_CHOICE_1_TITLE" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.OSXPatcher"/>
+    </choice>
+    <choice id="installer_choice_2" start_enabled="installer_choice_2_enabled()" enabled="installer_choice_2_enabled()" start_selected="installer_choice_2_selected(true)" selected="installer_choice_2_selected(false)" title="Yosemite" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.Yosemite"/>
+    </choice>
+    <choice id="installer_choice_3" start_enabled="installer_choice_3_enabled()" enabled="installer_choice_3_enabled()" start_selected="installer_choice_3_selected(true)" selected="installer_choice_3_selected(false)" title="Mavericks" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.Mavericks"/>
+    </choice>
+    <choice id="installer_choice_4" start_enabled="installer_choice_4_enabled()" enabled="installer_choice_4_enabled()" start_selected="installer_choice_4_selected(true)" selected="installer_choice_4_selected(false)" title="INSTALLER_CHOICE_4_TITLE" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.MountainLion"/>
+    </choice>
+    <!--+==========================+
+        |    Package References    |
+        +==========================+-->
+    <pkg-ref id="com.JohnsonNetwork.pkg.MountainLion" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/MountainLion.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.OSXPatcher" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/ElCapitan.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.Yosemite" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/Yosemite.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.Mavericks" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/Mavericks.pkg</pkg-ref>
+    <!--+==========================+
+        |    JavaScript Scripts    |
+        +==========================+-->
+    <script>
+
+	const __IC_FLAT_DISTRIBUTION__=false;
+	const IC_DISK_TYPE_DESTINATION=0;
+	const IC_DISK_TYPE_STARTUP_DISK=1;
+	const IC_OS_DISTRIBUTION_TYPE_ANY=0;
+	const IC_OS_DISTRIBUTION_TYPE_CLIENT=1;
+	const IC_OS_DISTRIBUTION_TYPE_SERVER=2;
+
+	function IC_CheckOS(inDiskType,inMustBeInstalled,inMinimumVersion,inDistributionType)
+	{
+		var tOSVersion=undefined;
+		
+		/* Check Minimum Version */
+		
+		if (inDiskType==IC_DISK_TYPE_DESTINATION)
+		{
+			if (my.target.systemVersion!=undefined)
+			{
+				tOSVersion=my.target.systemVersion.ProductVersion;
+			}
+			
+			/* Check if no OS is installed on the potential target */
+			
+			if (tOSVersion==undefined)
+			{
+				return (inMustBeInstalled==false);
+			}
+		}
+		else
+		{
+			tOSVersion=system.version.ProductVersion;
+		}
+		
+		if (system.compareVersions(tOSVersion,inMinimumVersion)==-1)
+		{
+			return false;
+		}
+		
+		/* Check Distribution Type */
+		
+		if (inDistributionType!=IC_OS_DISTRIBUTION_TYPE_ANY)
+		{
+			var tIsServer;
+			
+			if (system.compareVersions(tOSVersion,'10.8.0')==-1)
+			{
+				if (inDiskType==IC_DISK_TYPE_DESTINATION)
+				{
+					tIsServer=system.files.fileExistsAtPath(my.target.mountpoint+'/System/Library/CoreServices/ServerVersion.plist');
+				}
+				else
+				{
+					tIsServer=system.files.fileExistsAtPath('/System/Library/CoreServices/ServerVersion.plist');
+				}
+			}
+			else
+			{
+				if (inDiskType==IC_DISK_TYPE_DESTINATION)
+				{
+					tIsServer=system.files.fileExistsAtPath(my.target.mountpoint+'/Applications/Server.app');
+				}
+				else
+				{
+					tIsServer=system.files.fileExistsAtPath('/Applications/Server.app');
+				}
+			}
+			
+			if (inDistributionType==IC_OS_DISTRIBUTION_TYPE_CLIENT &amp;&amp; tIsServer==true)
+			{
+				return false;
+			}
+			
+			if (inDistributionType==IC_OS_DISTRIBUTION_TYPE_SERVER &amp;&amp; tIsServer==false)
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+	function installation_check()
+	{
+		var tResult;
+
+		tResult=IC_CheckOS(IC_DISK_TYPE_STARTUP_DISK,true,'10.5',IC_OS_DISTRIBUTION_TYPE_ANY);
+
+		if (tResult==false)
+		{
+			my.result.title = system.localizedStandardStringWithFormat('InstallationCheckError', system.localizedString('DISTRIBUTION_TITLE'));
+			my.result.message = ' ';
+			my.result.type = 'Fatal';
+		}
+
+		return tResult;
+	}
+
+	function installer_choice_1_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_2.selected &amp;&amp; (!choices.installer_choice_3.selected &amp;&amp; !choices.installer_choice_4.selected));
+
+		if (isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+	function installer_choice_2_enabled()
+	{
+		return (!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_3.enabled &amp;&amp; !choices.installer_choice_4.enabled));	
+	}
+
+	function installer_choice_2_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_3.enabled &amp;&amp; !choices.installer_choice_4.enabled));
+
+		if (installer_choice_2_enabled()==false || isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+	function installer_choice_3_enabled()
+	{
+		return (!choices.installer_choice_1.enabled &amp;&amp; !choices.installer_choice_4.enabled);	
+	}
+
+	function installer_choice_3_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_2.enabled &amp;&amp; !choices.installer_choice_4.enabled));
+
+		if (installer_choice_3_enabled()==false || isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+	function installer_choice_4_enabled()
+	{
+		return !choices.installer_choice_1.enabled;	
+	}
+
+	function installer_choice_4_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_2.enabled &amp;&amp; !choices.installer_choice_3.enabled));
+
+		if (installer_choice_4_enabled()==false || isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+    </script>
+</installer-script>

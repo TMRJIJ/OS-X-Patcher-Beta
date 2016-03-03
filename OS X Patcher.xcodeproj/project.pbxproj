@@ -1,0 +1,72 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		42052BAE1BDDACC200CA5C60 /* OSXInstallPatch.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = OSXInstallPatch.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		42052BA71BDDACA600CA5C60 = {
+			isa = PBXGroup;
+			children = (
+				42052BAE1BDDACC200CA5C60 /* OSXInstallPatch.sh */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		42052BA81BDDACA600CA5C60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 42052BAB1BDDACA600CA5C60 /* Build configuration list for PBXProject "OS X Patcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42052BA71BDDACA600CA5C60;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		42052BAC1BDDACA600CA5C60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		42052BAD1BDDACA600CA5C60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42052BAB1BDDACA600CA5C60 /* Build configuration list for PBXProject "OS X Patcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42052BAC1BDDACA600CA5C60 /* Debug */,
+				42052BAD1BDDACA600CA5C60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42052BA81BDDACA600CA5C60 /* Project object */;
+}
