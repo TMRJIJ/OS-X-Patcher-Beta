@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42DF81891D14796C008CFA47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF81881D14796C008CFA47 /* AppDelegate.m */; };
+		42DF818C1D14796C008CFA47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF818B1D14796C008CFA47 /* main.m */; };
+		42DF818E1D14796C008CFA47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42DF818D1D14796C008CFA47 /* Assets.xcassets */; };
+		42DF81911D14796C008CFA47 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DF818F1D14796C008CFA47 /* MainMenu.xib */; };
+		42DF819C1D14796C008CFA47 /* macOS_PatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF819B1D14796C008CFA47 /* macOS_PatcherTests.m */; };
+		42DF81A71D14796C008CFA47 /* macOS_PatcherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF81A61D14796C008CFA47 /* macOS_PatcherUITests.m */; };
+		42DF81B51D1479D7008CFA47 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81B41D1479D7008CFA47 /* Resources */; };
+		42DF81B71D1479E4008CFA47 /* OSXInstallPatchEl.sh in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81B61D1479E4008CFA47 /* OSXInstallPatchEl.sh */; };
+		42DF81BB1D1479EF008CFA47 /* OSXInstallPatchMav.sh in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81B81D1479EF008CFA47 /* OSXInstallPatchMav.sh */; };
+		42DF81BC1D1479EF008CFA47 /* OSXInstallPatchML.sh in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81B91D1479EF008CFA47 /* OSXInstallPatchML.sh */; };
+		42DF81BD1D1479EF008CFA47 /* OSXInstallPatchY.sh in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81BA1D1479EF008CFA47 /* OSXInstallPatchY.sh */; };
+		42DF81C01D147D44008CFA47 /* osxhfullblack.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81BF1D147D44008CFA47 /* osxhfullblack.png */; };
+		42DF81C31D147E3E008CFA47 /* Partition_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DF81C21D147E3E008CFA47 /* Partition_View.xib */; };
+		42DF81C61D147E87008CFA47 /* Partition_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF81C51D147E87008CFA47 /* Partition_View.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42DF81981D14796C008CFA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42DF817C1D14796C008CFA47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42DF81831D14796C008CFA47;
+			remoteInfo = "macOS Patcher";
+		};
+		42DF81A31D14796C008CFA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42DF817C1D14796C008CFA47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42DF81831D14796C008CFA47;
+			remoteInfo = "macOS Patcher";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42DF81841D14796C008CFA47 /* macOS Patcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Patcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DF81871D14796C008CFA47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42DF81881D14796C008CFA47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42DF818B1D14796C008CFA47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42DF818D1D14796C008CFA47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42DF81901D14796C008CFA47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		42DF81921D14796C008CFA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DF81971D14796C008CFA47 /* macOS PatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS PatcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DF819B1D14796C008CFA47 /* macOS_PatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = macOS_PatcherTests.m; sourceTree = "<group>"; };
+		42DF819D1D14796C008CFA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DF81A21D14796C008CFA47 /* macOS PatcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS PatcherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DF81A61D14796C008CFA47 /* macOS_PatcherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = macOS_PatcherUITests.m; sourceTree = "<group>"; };
+		42DF81A81D14796C008CFA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DF81B41D1479D7008CFA47 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../Resources; sourceTree = "<group>"; };
+		42DF81B61D1479E4008CFA47 /* OSXInstallPatchEl.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = OSXInstallPatchEl.sh; path = ../../OSXInstallPatchEl.sh; sourceTree = "<group>"; };
+		42DF81B81D1479EF008CFA47 /* OSXInstallPatchMav.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = OSXInstallPatchMav.sh; path = ../../OSXInstallPatchMav.sh; sourceTree = "<group>"; };
+		42DF81B91D1479EF008CFA47 /* OSXInstallPatchML.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = OSXInstallPatchML.sh; path = ../../OSXInstallPatchML.sh; sourceTree = "<group>"; };
+		42DF81BA1D1479EF008CFA47 /* OSXInstallPatchY.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = OSXInstallPatchY.sh; path = ../../OSXInstallPatchY.sh; sourceTree = "<group>"; };
+		42DF81BF1D147D44008CFA47 /* osxhfullblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = osxhfullblack.png; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/MacPostFactor/Images/osxhfullblack.png"; sourceTree = "<group>"; };
+		42DF81C21D147E3E008CFA47 /* Partition_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Partition_View.xib; sourceTree = "<group>"; };
+		42DF81C51D147E87008CFA47 /* Partition_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partition_View.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42DF81811D14796C008CFA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DF81941D14796C008CFA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DF819F1D14796C008CFA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42DF817B1D14796C008CFA47 = {
+			isa = PBXGroup;
+			children = (
+				42DF81861D14796C008CFA47 /* macOS Patcher */,
+				42DF819A1D14796C008CFA47 /* macOS PatcherTests */,
+				42DF81A51D14796C008CFA47 /* macOS PatcherUITests */,
+				42DF81851D14796C008CFA47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42DF81851D14796C008CFA47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81841D14796C008CFA47 /* macOS Patcher.app */,
+				42DF81971D14796C008CFA47 /* macOS PatcherTests.xctest */,
+				42DF81A21D14796C008CFA47 /* macOS PatcherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42DF81861D14796C008CFA47 /* macOS Patcher */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81C11D147DF4008CFA47 /* Pages */,
+				42DF81871D14796C008CFA47 /* AppDelegate.h */,
+				42DF81881D14796C008CFA47 /* AppDelegate.m */,
+				42DF818D1D14796C008CFA47 /* Assets.xcassets */,
+				42DF818F1D14796C008CFA47 /* MainMenu.xib */,
+				42DF81921D14796C008CFA47 /* Info.plist */,
+				42DF818A1D14796C008CFA47 /* Supporting Files */,
+			);
+			path = "macOS Patcher";
+			sourceTree = "<group>";
+		};
+		42DF818A1D14796C008CFA47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81BE1D147CF2008CFA47 /* Images */,
+				42DF81B61D1479E4008CFA47 /* OSXInstallPatchEl.sh */,
+				42DF81B81D1479EF008CFA47 /* OSXInstallPatchMav.sh */,
+				42DF81B91D1479EF008CFA47 /* OSXInstallPatchML.sh */,
+				42DF81BA1D1479EF008CFA47 /* OSXInstallPatchY.sh */,
+				42DF81B41D1479D7008CFA47 /* Resources */,
+				42DF818B1D14796C008CFA47 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42DF819A1D14796C008CFA47 /* macOS PatcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				42DF819B1D14796C008CFA47 /* macOS_PatcherTests.m */,
+				42DF819D1D14796C008CFA47 /* Info.plist */,
+			);
+			path = "macOS PatcherTests";
+			sourceTree = "<group>";
+		};
+		42DF81A51D14796C008CFA47 /* macOS PatcherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81A61D14796C008CFA47 /* macOS_PatcherUITests.m */,
+				42DF81A81D14796C008CFA47 /* Info.plist */,
+			);
+			path = "macOS PatcherUITests";
+			sourceTree = "<group>";
+		};
+		42DF81BE1D147CF2008CFA47 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81BF1D147D44008CFA47 /* osxhfullblack.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		42DF81C11D147DF4008CFA47 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81C41D147E49008CFA47 /* Partition */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
+		42DF81C41D147E49008CFA47 /* Partition */ = {
+			isa = PBXGroup;
+			children = (
+				42DF81C21D147E3E008CFA47 /* Partition_View.xib */,
+				42DF81C51D147E87008CFA47 /* Partition_View.m */,
+			);
+			name = Partition;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42DF81831D14796C008CFA47 /* macOS Patcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42DF81AB1D14796C008CFA47 /* Build configuration list for PBXNativeTarget "macOS Patcher" */;
+			buildPhases = (
+				42DF81801D14796C008CFA47 /* Sources */,
+				42DF81811D14796C008CFA47 /* Frameworks */,
+				42DF81821D14796C008CFA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "macOS Patcher";
+			productName = "macOS Patcher";
+			productReference = 42DF81841D14796C008CFA47 /* macOS Patcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42DF81961D14796C008CFA47 /* macOS PatcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42DF81AE1D14796C008CFA47 /* Build configuration list for PBXNativeTarget "macOS PatcherTests" */;
+			buildPhases = (
+				42DF81931D14796C008CFA47 /* Sources */,
+				42DF81941D14796C008CFA47 /* Frameworks */,
+				42DF81951D14796C008CFA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42DF81991D14796C008CFA47 /* PBXTargetDependency */,
+			);
+			name = "macOS PatcherTests";
+			productName = "macOS PatcherTests";
+			productReference = 42DF81971D14796C008CFA47 /* macOS PatcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42DF81A11D14796C008CFA47 /* macOS PatcherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42DF81B11D14796C008CFA47 /* Build configuration list for PBXNativeTarget "macOS PatcherUITests" */;
+			buildPhases = (
+				42DF819E1D14796C008CFA47 /* Sources */,
+				42DF819F1D14796C008CFA47 /* Frameworks */,
+				42DF81A01D14796C008CFA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42DF81A41D14796C008CFA47 /* PBXTargetDependency */,
+			);
+			name = "macOS PatcherUITests";
+			productName = "macOS PatcherUITests";
+			productReference = 42DF81A21D14796C008CFA47 /* macOS PatcherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42DF817C1D14796C008CFA47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Johnson Network";
+				TargetAttributes = {
+					42DF81831D14796C008CFA47 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					42DF81961D14796C008CFA47 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 42DF81831D14796C008CFA47;
+					};
+					42DF81A11D14796C008CFA47 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 42DF81831D14796C008CFA47;
+					};
+				};
+			};
+			buildConfigurationList = 42DF817F1D14796C008CFA47 /* Build configuration list for PBXProject "macOS Patcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42DF817B1D14796C008CFA47;
+			productRefGroup = 42DF81851D14796C008CFA47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42DF81831D14796C008CFA47 /* macOS Patcher */,
+				42DF81961D14796C008CFA47 /* macOS PatcherTests */,
+				42DF81A11D14796C008CFA47 /* macOS PatcherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42DF81821D14796C008CFA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42DF81BB1D1479EF008CFA47 /* OSXInstallPatchMav.sh in Resources */,
+				42DF818E1D14796C008CFA47 /* Assets.xcassets in Resources */,
+				42DF81BD1D1479EF008CFA47 /* OSXInstallPatchY.sh in Resources */,
+				42DF81911D14796C008CFA47 /* MainMenu.xib in Resources */,
+				42DF81BC1D1479EF008CFA47 /* OSXInstallPatchML.sh in Resources */,
+				42DF81C31D147E3E008CFA47 /* Partition_View.xib in Resources */,
+				42DF81B51D1479D7008CFA47 /* Resources in Resources */,
+				42DF81C01D147D44008CFA47 /* osxhfullblack.png in Resources */,
+				42DF81B71D1479E4008CFA47 /* OSXInstallPatchEl.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DF81951D14796C008CFA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DF81A01D14796C008CFA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42DF81801D14796C008CFA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42DF81C61D147E87008CFA47 /* Partition_View.m in Sources */,
+				42DF818C1D14796C008CFA47 /* main.m in Sources */,
+				42DF81891D14796C008CFA47 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DF81931D14796C008CFA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42DF819C1D14796C008CFA47 /* macOS_PatcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DF819E1D14796C008CFA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42DF81A71D14796C008CFA47 /* macOS_PatcherUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42DF81991D14796C008CFA47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42DF81831D14796C008CFA47 /* macOS Patcher */;
+			targetProxy = 42DF81981D14796C008CFA47 /* PBXContainerItemProxy */;
+		};
+		42DF81A41D14796C008CFA47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42DF81831D14796C008CFA47 /* macOS Patcher */;
+			targetProxy = 42DF81A31D14796C008CFA47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42DF818F1D14796C008CFA47 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42DF81901D14796C008CFA47 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42DF81A91D14796C008CFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		42DF81AA1D14796C008CFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		42DF81AC1D14796C008CFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "macOS Patcher/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "JN4.macOS-Patcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42DF81AD1D14796C008CFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "macOS Patcher/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "JN4.macOS-Patcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		42DF81AF1D14796C008CFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "macOS PatcherTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JN4.macOS-PatcherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macOS Patcher.app/Contents/MacOS/macOS Patcher";
+			};
+			name = Debug;
+		};
+		42DF81B01D14796C008CFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "macOS PatcherTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JN4.macOS-PatcherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macOS Patcher.app/Contents/MacOS/macOS Patcher";
+			};
+			name = Release;
+		};
+		42DF81B21D14796C008CFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "macOS PatcherUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JN4.macOS-PatcherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "macOS Patcher";
+			};
+			name = Debug;
+		};
+		42DF81B31D14796C008CFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "macOS PatcherUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JN4.macOS-PatcherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "macOS Patcher";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42DF817F1D14796C008CFA47 /* Build configuration list for PBXProject "macOS Patcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42DF81A91D14796C008CFA47 /* Debug */,
+				42DF81AA1D14796C008CFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42DF81AB1D14796C008CFA47 /* Build configuration list for PBXNativeTarget "macOS Patcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42DF81AC1D14796C008CFA47 /* Debug */,
+				42DF81AD1D14796C008CFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42DF81AE1D14796C008CFA47 /* Build configuration list for PBXNativeTarget "macOS PatcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42DF81AF1D14796C008CFA47 /* Debug */,
+				42DF81B01D14796C008CFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42DF81B11D14796C008CFA47 /* Build configuration list for PBXNativeTarget "macOS PatcherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42DF81B21D14796C008CFA47 /* Debug */,
+				42DF81B31D14796C008CFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42DF817C1D14796C008CFA47 /* Project object */;
+}

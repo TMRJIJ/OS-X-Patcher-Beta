@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <installer-script authoringTool="Packages" authoringToolVersion="1.1.2" authoringToolBuild="2B104" minSpecVersion="1.0">
-    <options rootVolumeOnly="true" allow-external-scripts="false"/>
+    <options rootVolumeOnly="true" customize="always" allow-external-scripts="false"/>
     <installation-check script="installation_check()"/>
     <!--+==========================+
         |       Presentation       |
@@ -11,14 +11,34 @@
         +==========================+-->
     <choices-outline>
         <line choice="installer_choice_1"/>
+        <line choice="installer_choice_2"/>
+        <line choice="installer_choice_3"/>
+        <line choice="installer_choice_4"/>
+        <line choice="installer_choice_5"/>
     </choices-outline>
-    <choice id="installer_choice_1" title="OS X Patcher" description="">
+    <choice id="installer_choice_1" start_selected="installer_choice_1_selected(true)" selected="installer_choice_1_selected(false)" title="INSTALLER_CHOICE_1_TITLE" description="">
         <pkg-ref id="com.JohnsonNetwork.pkg.OSXPatcher"/>
+    </choice>
+    <choice id="installer_choice_2" start_enabled="installer_choice_2_enabled()" enabled="installer_choice_2_enabled()" start_selected="installer_choice_2_selected(true)" selected="installer_choice_2_selected(false)" title="Yosemite" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.Yosemite"/>
+    </choice>
+    <choice id="installer_choice_3" start_enabled="installer_choice_3_enabled()" enabled="installer_choice_3_enabled()" start_selected="installer_choice_3_selected(true)" selected="installer_choice_3_selected(false)" title="Mavericks" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.Mavericks"/>
+    </choice>
+    <choice id="installer_choice_4" start_enabled="installer_choice_4_enabled()" enabled="installer_choice_4_enabled()" start_selected="installer_choice_4_selected(true)" selected="installer_choice_4_selected(false)" title="INSTALLER_CHOICE_4_TITLE" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.MountainLion"/>
+    </choice>
+    <choice id="installer_choice_5" title="Sierra" description="">
+        <pkg-ref id="com.JohnsonNetwork.pkg.Sierra"/>
     </choice>
     <!--+==========================+
         |    Package References    |
         +==========================+-->
-    <pkg-ref id="com.JohnsonNetwork.pkg.OSXPatcher" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/OS%20X%20Patcher.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.MountainLion" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/MountainLion.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.OSXPatcher" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/ElCapitan.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.Yosemite" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/Yosemite.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.Mavericks" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/Mavericks.pkg</pkg-ref>
+    <pkg-ref id="com.JohnsonNetwork.pkg.Sierra" version="1.0" auth="Root" installKBytes="0">file:./Contents/Packages/Sierra.pkg</pkg-ref>
     <!--+==========================+
         |    JavaScript Scripts    |
         +==========================+-->
@@ -118,6 +138,77 @@
 		}
 
 		return tResult;
+	}
+
+	function installer_choice_1_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_2.selected &amp;&amp; (!choices.installer_choice_3.selected &amp;&amp; !choices.installer_choice_4.selected));
+
+		if (isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+	function installer_choice_2_enabled()
+	{
+		return (!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_3.enabled &amp;&amp; !choices.installer_choice_4.enabled));	
+	}
+
+	function installer_choice_2_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_3.enabled &amp;&amp; !choices.installer_choice_4.enabled));
+
+		if (installer_choice_2_enabled()==false || isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+	function installer_choice_3_enabled()
+	{
+		return (!choices.installer_choice_1.enabled &amp;&amp; !choices.installer_choice_4.enabled);	
+	}
+
+	function installer_choice_3_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_2.enabled &amp;&amp; !choices.installer_choice_4.enabled));
+
+		if (installer_choice_3_enabled()==false || isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
+	}
+
+	function installer_choice_4_enabled()
+	{
+		return !choices.installer_choice_1.enabled;	
+	}
+
+	function installer_choice_4_selected(isStart)
+	{
+		var tSelected;
+
+		tSelected=(!choices.installer_choice_1.enabled &amp;&amp; (!choices.installer_choice_2.enabled &amp;&amp; !choices.installer_choice_3.enabled));
+
+		if (installer_choice_4_enabled()==false || isStart==true)
+		{
+			return tSelected;
+		}
+
+		return (tSelected &amp;&amp; my.choice.selected);
 	}
 
     </script>
